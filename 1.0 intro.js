@@ -45,4 +45,6 @@ spiderMonkey : firefox
 // Voici quelques exemples de base pour illustrer les concepts :
 
 // Conclusion
-// JavaScript est un langage essentiel pour le développement web moderne. Sa flexibilité et sa puissance en font un outil incontournable pour les développeurs. En comprenant ses concepts de base et en pratiquant régulièrement, vous serez en mesure de créer des applications web interactives et performantes.
+// JavaScript est un langage essentiel pour le développement web moderne. Sa flexibilité et sa puissance en font 
+// un outil incontournable pour les développeurs. En comprenant ses concepts de base et en pratiquant régulièrement, 
+// vous serez en mesure de créer des applications web interactives et performantes.
