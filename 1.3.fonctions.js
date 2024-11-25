@@ -1,57 +1,68 @@
-// sytanx
-// function name_function(parametres){
+// Comment déclarer une fonction
+// function nomDeLaFonction(parametres) {
+//     // ce que fait la fonction
+// }
 
-//}
-// deux types de fonction: fonction nommee et fonction anonyme
-// exemple: fonction nommee => function f(){}
-// fonction anonyme => function(){}
-// toutes les fonctions retournent. soit undefined soit il retourne ce que vous avez mentionne
-/*function f1(){
-
+// Deux types de fonctions : fonction nommée et fonction anonyme
+// Exemple de fonction nommée
+function direBonjour() {
+    console.log("Bonjour !");
 }
-let res = f1()
-console.log(res) // => undefined
+direBonjour(); // Appelle la fonction et affiche "Bonjour !"
 
-function f2(){
- return 20
+// Exemple de fonction anonyme
+let direSalut = function() {
+    console.log("Salut !");
+};
+direSalut(); // Appelle la fonction et affiche "Salut !"
+
+// Toutes les fonctions retournent une valeur. Par défaut, elles retournent undefined si aucune valeur n'est spécifiée.
+function retourneRien() {
+    // pas de return
 }
-let res2 = f2()
-console.log(res2)
-*/
+let resultat = retourneRien();
+console.log(resultat); // => undefined
 
-
-// parametres
-// les params sont facultatifs
-// les params acceptent des valeurs par defaut param=default value
-function somme(a=1,b=2){
-    return a+b
+function retourneVingt() {
+    return 20;
 }
-console.log(somme(1,5,54,654,657,45,456,"OOOOK"))
-console.log(somme(1))
-console.log(somme())
-console.log(somme(4,5))
-function somme2(a=1,b=2){
-    console.table(arguments)// c 'est un tableau injecte par js qui contient tous les
-    // parametres envoyes
-}
-console.log(somme2(1,5,54,654,657,45,456))
+let resultat2 = retourneVingt();
+console.log(resultat2); // => 20
 
-function moyenne(){
-    let s = 0
-    for(let i=0;i<arguments.length;i++){
-        s+=arguments[i]
+// Paramètres
+// Les paramètres sont des valeurs que l'on peut passer à une fonction
+// Les paramètres peuvent avoir des valeurs par défaut
+function addition(a = 1, b = 2) {
+    return a + b;
+}
+console.log(addition(1, 5)); // Utilise 1 et 5, résultat : 6
+console.log(addition(1)); // Utilise 1 et la valeur par défaut 2, résultat : 3
+console.log(addition()); // Utilise les valeurs par défaut 1 et 2, résultat : 3
+console.log(addition(4, 5)); // Utilise 4 et 5, résultat : 9
+
+// Utilisation de l'objet arguments
+// arguments est un objet qui contient tous les paramètres passés à la fonction
+function addition2(a = 1, b = 2) {
+    console.table(arguments); // Affiche tous les paramètres passés
+}
+console.log(addition2(1, 5, 54, 654, 657, 45, 456));
+
+// Calcul de la moyenne avec arguments
+function moyenne() {
+    let somme = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        somme += arguments[i];
     }
-    return s/arguments.length
+    return somme / arguments.length;
 }
-console.log(moyenne(10,20,30))
+console.log(moyenne(10, 20, 30)); // Calcule la moyenne des valeurs passées
 
-let moyenne2 = function(x, ...notes){ // rest parameter
-    let s = 0
-    for(let i=0;i<notes.length;i++){
-        s+=notes[i]
+// Utilisation des paramètres rest
+let moyenne2 = function(x, ...notes) { // rest parameter
+    let somme = 0;
+    for (let i = 0; i < notes.length; i++) {
+        somme += notes[i];
     }
-    return s/notes.length
-}
-let ff = moyenne2
-console.log(moyenne2(10,20,30))
-
+    return somme / notes.length;
+};
+console.log(moyenne2(10, 20, 30)); // Calcule la moyenne des valeurs passées après le premier paramètre
